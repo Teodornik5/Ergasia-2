@@ -13,7 +13,7 @@ void arxikopoiisi_katalogou() {
     }
 }
 
-void paraggelia(int kodikos_proiontos, char client_name[50], int client_pipe[2]) {
+void paraggelia(int kodikos_proiontos, char onoma_pelati[50], int client_pipe[2]) {
     char apanthsh[100];
     katalogos[kodikos_proiontos].aitimata++;
 
@@ -23,7 +23,7 @@ void paraggelia(int kodikos_proiontos, char client_name[50], int client_pipe[2])
         snprintf(apanthsh, sizeof(apanthsh), "Επιτυχημένη Αγορά: %s (%.2f)", katalogos[kodikos_proiontos].description, katalogos[kodikos_proiontos].price);
     } else {
         strcpy(apanthsh, "Σφάλμα:Δεν υπάρχει το προιόν");
-        strcpy(katalogos[kodikos_proiontos].disarestimenoi_pelates[katalogos[kodikos_proiontos].disarestimenoi++], client_name);
+        strcpy(katalogos[kodikos_proiontos].disarestimenoi_pelates[katalogos[kodikos_proiontos].disarestimenoi++], onoma_pelati);
     }
 
     write(client_pipe[1], apanthsh, strlen(apanthsh) + 1);
