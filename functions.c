@@ -2,7 +2,7 @@
 
 Proion katalogos[PROIONTA];
 
-void initialize_katalogos() {
+void arxikopoiisi_katalogou() {
     for (int i = 0; i < PROIONTA; i++) {
         snprintf(katalogos[i].description, sizeof(katalogos[i].description), "Προϊόν %d", i + 1);
         katalogos[i].price = (float)((rand() % 1000) / 10.0); // anathetei tyxaia timh sto proion
