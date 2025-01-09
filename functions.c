@@ -46,10 +46,10 @@ void sinopsi() {
             printf("%s ", katalogos[i].disarestimenoi_pelates[j]);
         }
         printf("\n");
-
-        sunolikes_paraggelies += katalogos[i].aitimata;
+        
         epityximena_aitimata += katalogos[i].poulithikan;
         apotyximena_aitimata += katalogos[i].disarestimenoi;
+        sunolikes_paraggelies += katalogos[i].aitimata;
         tziros += katalogos[i].poulithikan * katalogos[i].price;
     }
 
