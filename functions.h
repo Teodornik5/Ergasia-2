@@ -24,7 +24,7 @@ typedef struct Proion { // Δομή για ένα προϊόν
 extern Proion katalogos[PROIONTA]; // Εξωτερική δήλωση για χρήση του πίνακα σε πολλά αρχεία
 
 void arxikopoiisi_katalogou();
-void paraggelia(int kodikos_proiontos, char client_name[50], int client_pipe[2]);
+void paraggelia(int kodikos_proiontos, char onoma_pelati[50], int client_pipe[2]);
 void sinopsi();
 
 #endif // FUNCTIONS_H
