@@ -4,7 +4,7 @@ int main() {
     int ptc[PELATES][2], ctp[PELATES][2]; // Δύο πίνακες για pipes (γονέας -> παιδί, παιδί -> γονέας)
     pid_t pids[PELATES]; // Πίνακας για τα process IDs των παιδιών
 
-    arxikopoiisi_katalogou(); // Κλήση της συνάρτησης που αρχικοποιεί τα προϊόντα
+    arxikopoiisi_katalogou(); // Κλήση της συνάρτησης από functions.c για αρχικοποίηση
 
     for (int i = 0; i < PELATES; i++) {
         pipe(ptc[i]); // Δημιουργία pipe για επικοινωνία γονέα -> παιδί
