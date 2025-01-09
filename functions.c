@@ -17,17 +17,17 @@ void paraggelia(int kodikos_proiontos, char onoma_pelati[50], int client_pipe[2]
     char apanthsh[100];
     katalogos[kodikos_proiontos].aitimata++;
 
-    if (katalogos[kodikos_proiontos].item_count > 0) {
+    if (katalogos[kodikos_proiontos].item_count > 0) { // Αν υπάρχει διαθέσιμο
         katalogos[kodikos_proiontos].item_count--;
         katalogos[kodikos_proiontos].poulithikan++;
         snprintf(apanthsh, sizeof(apanthsh), "Επιτυχημένη Αγορά: %s (%.2f)", katalogos[kodikos_proiontos].description, katalogos[kodikos_proiontos].price);
-    } else {
+    } else { // Αν δεν υπάρχει διαθέσιμο
         strcpy(apanthsh, "Σφάλμα:Δεν υπάρχει το προιόν");
-        strcpy(katalogos[kodikos_proiontos].disarestimenoi_pelates[katalogos[kodikos_proiontos].disarestimenoi++], onoma_pelati);
+        strcpy(katalogos[kodikos_proiontos].disarestimenoi_pelates[katalogos[kodikos_proiontos].disarestimenoi++], onoma_pelati); // Καταγραφή δυσαρεστημένου
     }
 
     write(client_pipe[1], apanthsh, strlen(apanthsh) + 1);
-    sleep(1); // perimenei 1 deuterolepto
+    sleep(1); // Aναμονή 1 δευτερολέπτου
 }
 
 void sinopsi() {
@@ -37,13 +37,13 @@ void sinopsi() {
     float tziros = 0;
 
     printf("\n***** Σύνοψη *****\n");
-    for (int i = 0; i < PROIONTA; i++) {
+    for (int i = 0; i < PROIONTA; i++) { // Για κάθε προϊόν
         printf("%s:\n", katalogos[i].description);
         printf(">Αιτήματα: %d\n", katalogos[i].aitimata);
         printf(">Πωλήσεις: %d\n", katalogos[i].poulithikan);
         printf(">Έλλειψη: ");
-        for (int j = 0; j < katalogos[i].disarestimenoi; j++) {
-            printf("%s ", katalogos[i].disarestimenoi_pelates[j]);
+        for (int j = 0; j < katalogos[i].disarestimenoi; j++) { 
+            printf("%s ", katalogos[i].disarestimenoi_pelates[j]); // Εκτύπωση δυσαρεστημένων
         }
         printf("\n");
         
