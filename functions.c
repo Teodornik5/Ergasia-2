@@ -50,7 +50,7 @@ void sinopsi() {
         epityximena_aitimata += katalogos[i].poulithikan;
         apotyximena_aitimata += katalogos[i].disarestimenoi;
         sunolikes_paraggelies += katalogos[i].aitimata;
-        tziros += katalogos[i].poulithikan * katalogos[i].price;
+        tziros += katalogos[i].price * katalogos[i].poulithikan;
     }
 
     printf("\n*Συνολικές Παραγγελίες: %d\n", sunolikes_paraggelies);
