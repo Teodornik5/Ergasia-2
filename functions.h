@@ -21,7 +21,7 @@ typedef struct Proion {
     int poulithikan;
 } Proion;
 
-extern Proion katalogos[PROIONTA];
+extern Proion katalogos[PROIONTA]; // Πίνακας με όλα τα προϊόντα
 
 void arxikopoiisi_katalogou();
 void paraggelia(int kodikos_proiontos, char client_name[50], int client_pipe[2]);
