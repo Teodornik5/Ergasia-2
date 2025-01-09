@@ -4,7 +4,7 @@ int main() {
     int ptc[PELATES][2], ctp[PELATES][2];
     pid_t pids[PELATES];
 
-    initialize_katalogos();
+    arxikopoiisi_katalogou();
 
     for (int i = 0; i < PELATES; i++) {
         pipe(ptc[i]); //ptc = parent to child
