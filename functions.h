@@ -11,7 +11,7 @@
 #define PARAGGELIES_PELATON 10
 #define PROIONTA 20
 
-typedef struct Proion {
+typedef struct Proion { // Δομή για ένα προϊόν
     char description[50];
     float price;
     int item_count;
