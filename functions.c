@@ -41,7 +41,7 @@ void sinopsi() {
         printf("%s:\n", katalogos[i].description);
         printf(">Αιτήματα: %d\n", katalogos[i].aitimata);
         printf(">Πωλήσεις: %d\n", katalogos[i].poulithikan);
-        printf(">Έλλειψη: ");
+        printf(">Δεν Παρέλαβε: %s\n", katalogos[i].onoma_pelati);
         for (int j = 0; j < katalogos[i].disarestimenoi; j++) { 
             printf("%s ", katalogos[i].disarestimenoi_pelates[j]); // Εκτύπωση δυσαρεστημένων
         }
