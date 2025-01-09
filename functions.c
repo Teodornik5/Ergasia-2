@@ -31,7 +31,9 @@ void paraggelia(int kodikos_proiontos, char client_name[50], int client_pipe[2])
 }
 
 void sinopsi() {
-    int sunolikes_paraggelies = 0, epityximena_aitimata = 0, apotyximena_aitimata = 0;
+    int sunolikes_paraggelies = 0; 
+    epityximena_aitimata = 0;
+    apotyximena_aitimata = 0;
     float tziros = 0;
 
     printf("\n***** Σύνοψη *****\n");
