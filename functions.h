@@ -23,7 +23,7 @@ typedef struct Proion {
 
 extern Proion katalogos[PROIONTA];
 
-void initialize_katalogos();
+void arxikopoiisi_katalogou();
 void paraggelia(int kodikos_proiontos, char client_name[50], int client_pipe[2]);
 void sinopsi();
 
