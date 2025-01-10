@@ -4,6 +4,7 @@ int main() {
     int ptc[PELATES][2], ctp[PELATES][2]; // Δύο πίνακες για pipes (γονέας -> παιδί, παιδί -> γονέας)
     pid_t pids[PELATES]; // Πίνακας για τα process IDs των παιδιών
 
+    srand(time(NULL)); //Set seed based on current time 
     arxikopoiisi_katalogou(); // Κλήση της συνάρτησης από functions.c για αρχικοποίηση
 
     for (int i = 0; i < PELATES; i++) {
@@ -15,7 +16,7 @@ int main() {
             close(ctp[i][0]); // Κλείνουμε την ανάγνωση στο pipe παιδιού -> γονέα στο παιδί
 
             for (int j = 0; j < PARAGGELIES_PELATON; j++) { // Κάθε πελάτης εκτελεί τις παραγγελίες του
-               
+                srand(time(NULL)); //Set seed based on current time 
                 int kodikos_proiontos = rand() % PROIONTA; // Επιλέγει τυχαία έναν κωδικό προϊόντος
                 write(ctp[i][1], &kodikos_proiontos, sizeof(int)); // Στέλνει τον κωδικό στον γονέα
 
