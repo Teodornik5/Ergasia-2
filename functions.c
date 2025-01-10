@@ -4,7 +4,7 @@ Proion katalogos[PROIONTA];
 
 void arxikopoiisi_katalogou() {
     for (int i = 0; i < PROIONTA; i++) {
-        snprintf(katalogos[i].description, sizeof(katalogos[i].description), "Προϊόν %d", i + 1);
+        snprintf(katalogos[i].description, sizeof(katalogos[i].description), "Προϊόν %d", i + 1); //εξασφαλίζει ότι η συμβολοσειρά που γράφεται στο description δεν θα ξεπεράσει το μέγεθος του πίνακα, αποτρέποντας υπερχείλιση μνήμης
         katalogos[i].price = (float)((rand() % 1000) / 10.0); // anathetei tyxaia timh sto proion
         katalogos[i].item_count = 2; 
         katalogos[i].aitimata = 0;
@@ -20,7 +20,7 @@ void paraggelia(int kodikos_proiontos, char onoma_pelati[50], int client_pipe[2]
     if (katalogos[kodikos_proiontos].item_count > 0) { // Αν υπάρχει διαθέσιμο
         katalogos[kodikos_proiontos].item_count--;
         katalogos[kodikos_proiontos].poulithikan++;
-        snprintf(apanthsh, sizeof(apanthsh), "Επιτυχημένη Αγορά: %s (%.2f)", katalogos[kodikos_proiontos].description, katalogos[kodikos_proiontos].price);
+        snprintf(apanthsh, sizeof(apanthsh), "Επιτυχημένη Αγορά: %s (%.2f)", katalogos[kodikos_proiontos].description, katalogos[kodikos_proiontos].price); 
     } else { // Αν δεν υπάρχει διαθέσιμο
         strcpy(apanthsh, "Σφάλμα:Δεν υπάρχει το προιόν");
         strcpy(katalogos[kodikos_proiontos].disarestimenoi_pelates[katalogos[kodikos_proiontos].disarestimenoi++], onoma_pelati); // Καταγραφή δυσαρεστημένου
@@ -38,10 +38,10 @@ void sinopsi() {
 
     printf("\n***** Σύνοψη *****\n");
     for (int i = 0; i < PROIONTA; i++) { // Για κάθε προϊόν
-        printf("%s:\n", katalogos[i].description);
+        printf("--- %s: ---\n", katalogos[i].description);
         printf(">Αιτήματα: %d\n", katalogos[i].aitimata);
         printf(">Πωλήσεις: %d\n", katalogos[i].poulithikan);
-        printf(">Δεν Παρέλαβε: %s\n", katalogos[i].onoma_pelati);
+        printf(">Δεν Παρέλαβε: %s", katalogos[i].onoma_pelati);
         for (int j = 0; j < katalogos[i].disarestimenoi; j++) { 
             printf("%s ", katalogos[i].disarestimenoi_pelates[j]); // Εκτύπωση δυσαρεστημένων
         }
