@@ -1,18 +1,20 @@
-CC = gcc
-CFLAGS = -Wall -Wextra -g
-OBJ = main.o functions.o
-EXEC = eshop
+CC = gcc                   # Ο compiler που θα χρησιμοποιηθεί (gcc)
 
-all: $(EXEC)
+OBJ = main.o functions.o   # Τα αρχεία αντικειμένου (.o) που χρειάζονται για τη σύνδεση.
+EXEC = eshop               # Το όνομα του εκτελέσιμου προγράμματος.
 
-$(EXEC): $(OBJ)
-	$(CC) $(CFLAGS) -o $(EXEC) $(OBJ)
+all: $(EXEC)               # Ο κύριος στόχος του Makefile. Κατά την εκτέλεση της εντολής `make`,
+                           # το Makefile εκτελεί τον στόχο `all`, που δημιουργεί το εκτελέσιμο.
 
-main.o: main.c functions.h
-	$(CC) $(CFLAGS) -c main.c
+$(EXEC): $(OBJ)            # Το εκτελέσιμο πρόγραμμα `eshop` εξαρτάται από τα αρχεία αντικειμένου.
+	$(CC) -o $(EXEC) $(OBJ)  
+                                       # Χρησιμοποιεί τον `gcc` για να συνδέσει τα αρχεία .o και να παράξει το εκτελέσιμο `eshop`.
 
-functions.o: functions.c functions.h
-	$(CC) $(CFLAGS) -c functions.c
+main.o: main.c functions.h # Το `main.o` εξαρτάται από τα αρχεία `main.c` και `functions.h`.
+	$(CC) -c main.c  	# Μεταγλωττίζει το `main.c` σε `main.o`.
 
-clean:
-	rm -f $(OBJ) $(EXEC)
+functions.o: functions.c functions.h # Το `functions.o` εξαρτάται από τα `functions.c` και `functions.h`.
+	$(CC) -c functions.c	  # Μεταγλωττίζει το `functions.c` σε `functions.o`.
+
+clean:                     
+	rm $(OBJ) $(EXEC)    # Διαγραφή όλων των παραγόμενων αρχείων (.o, το εκτελέσιμο).
