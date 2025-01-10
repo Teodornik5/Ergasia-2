@@ -19,6 +19,7 @@ typedef struct Proion { // Δομή για ένα προϊόν
     int disarestimenoi;
     char disarestimenoi_pelates[100][50];
     int poulithikan;
+    char onoma_pelati[50];
 } Proion;
 
 extern Proion katalogos[PROIONTA]; // Εξωτερική δήλωση για χρήση του πίνακα σε πολλά αρχεία
