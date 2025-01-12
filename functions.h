@@ -28,4 +28,4 @@ void arxikopoiisi_katalogou();
 void paraggelia(int kodikos_proiontos, char onoma_pelati[50], int client_pipe[2]);
 void sinopsi();
 
-#endif // FUNCTIONS_H
+#endif 
