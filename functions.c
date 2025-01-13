@@ -4,7 +4,8 @@ Proion katalogos[PROIONTA];
 
 void arxikopoiisi_katalogou() {
     for (int i = 0; i < PROIONTA; i++) {
-        snprintf(katalogos[i].description, sizeof(katalogos[i].description), "Προϊόν %d", i + 1); //Εξασφαλίζει ότι η συμβολοσειρά (string) που γράφεται στο description δεν θα ξεπεράσει το μέγεθος του πίνακα, αποτρέποντας υπερχείλιση μνήμης
+        snprintf(katalogos[i].description, sizeof(katalogos[i].description), "Προϊόν %d", i + 1); 
+        //Εξασφαλίζει ότι η συμβολοσειρά (string) που γράφεται στο description δεν θα ξεπεράσει το μέγεθος του πίνακα, αποτρέποντας υπερχείλιση μνήμης
         katalogos[i].price = (float)((rand() % 1000) / 10.0); // Αναθέτει τυχαία τιμή στο προιόν
         katalogos[i].item_count = 2; 
         katalogos[i].aitimata = 0;
