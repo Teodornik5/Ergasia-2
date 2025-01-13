@@ -1,11 +1,11 @@
 #ifndef FUNCTIONS_H //Ελέγχει αν η μακροεντολή FUNCTIONS_H δεν έχει ήδη οριστεί, προκείμενου να μην συμπεριληφθεί πολλαπλές φορές και μπερδέψει τον compiler.
 #define FUNCTIONS_H //Ορίζει τη μακροεντολή FUNCTIONS_H, ώστε να θυμάται ότι το αρχείο αυτό έχει ήδη συμπεριληφθεί.
 
-#include <unistd.h>
-#include <string.h>
-#include <time.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include <unistd.h>   // Για pipe, fork, write, read, close
+#include <string.h>   // Για λειτουργίες σε strings
+#include <time.h>     // Για τη χρήση τυχαίων αριθμών (rand)
+#include <stdio.h>    // Για είσοδο/έξοδο
+#include <stdlib.h>   // Για malloc, free, exit
 
 #define PELATES 5
 #define PARAGGELIES_PELATON 10
