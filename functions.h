@@ -1,5 +1,5 @@
-#ifndef FUNCTIONS_H
-#define FUNCTIONS_H
+#ifndef FUNCTIONS_H //Ελέγχει αν η μακροεντολή FUNCTIONS_H δεν έχει ήδη οριστεί, προκείμενου να μην συμπεριληφθεί πολλαπλές φορές και μπερδέψει τον compiler.
+#define FUNCTIONS_H //Ορίζει τη μακροεντολή FUNCTIONS_H, ώστε να θυμάται ότι το αρχείο αυτό έχει ήδη συμπεριληφθεί.
 
 #include <unistd.h>
 #include <string.h>
